@@ -7,7 +7,6 @@ var myObj = '';
 var nav = '';
 var x = '';
 var ul = "<ul>" + "<ul>";
-var innerNav = '';
 var wrapper = '';
 var url = '';
 
@@ -22,17 +21,19 @@ xhr.onload = function() {
         // } // ask why this didn't work
 		for (var i = 0; i < myObj.items.length; i++) {
 
-			let innerNav = ""; 
+			var innerNav = '';
 			if( myObj.items[i].items.length > 0) {
 				
 				for (var f = 0; f < myObj.items[i].items.length; f++) {
-					let innerUrl = myObj.items[i].items.url
+					let innerUrl = myObj.items[i].items[f].url
+					console.log('innerUrl', innerUrl)
 					innerNav = innerNav + "<a href='" + innerUrl + "'><div style='height:50px;width:50px;background-color:orange;margin:5px;'></div></a>";
 				}
 			}
 			url = myObj.items[i].url
-
 			nav += '<li id="tar_' + i + '"><a href="'+ url +'">' + myObj.items[i].label + '</a>' + innerNav +'</li>';
+
+			
 			
 
 			// console.log("--has child");
@@ -59,12 +60,7 @@ xhr.onload = function() {
 				// }
 				
 		}
-		
-		// about 
-		// for (var i = 0; i < myObj.items[1].items.length; i++) {
-		// 	innerNav += '<li>' + myObj.items[1].items[i].label +'</li>';
-		// 	console.log('inner nav', innerNav);
-		// }
+
 
 
 
