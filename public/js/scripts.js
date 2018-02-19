@@ -38,13 +38,52 @@ xhr.onload = function() {
 		}
 
 		document.querySelector('.nav-items').innerHTML = nav;
-		
+
+		// nav function
+		var el = document.querySelector('.nav-item');
+		if(el) {
+			el.addEventListener("click", function(event) {
+				var background = document.querySelector('.background')
+		    	console.log('hit');
+				if (background.style.display === "none") {
+			        background.style.display = "block";
+			    } else {
+			        background.style.display = "none";
+			    }
+			})
+		}
+			
 
     } else {
         alert('Request failed.  Returned status of ' + xhr.status);
     }
 };
 xhr.send();
+
+// function navigation() {
+// 	var el = document.querySelector('.nav-item');
+// 	if(el) {
+// 		el.addEventListener("click", function(event) {
+// 			var background = document.querySelector('.background')
+// 	    	var className = background.getAttribute("display");
+// 	    	console.log('hit');
+// 			if(className=="none") {
+// 			background.className = "block";
+// 			}
+// 			else{
+// 			background.className = "none";
+// 			}
+// 		})
+// 	}
+	
+// }
+
+// navigation();
+
+// var el = document.getElementById('overlayBtn');
+// if(el){
+//   el.addEventListener('click', swapper, false);
+// }
 
 // var data = '';
 // console.log(this);
