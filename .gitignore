@@ -4,4 +4,4 @@ node_modules
 # Files
 .DS_STORE
 *.log
-.sass-cache
+.sass-cache/

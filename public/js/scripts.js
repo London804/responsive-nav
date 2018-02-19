@@ -20,7 +20,7 @@ xhr.onload = function() {
         //     console.log(myObj.items[x]);
         // } // ask why this didn't work
 		for (var i = 0; i < myObj.items.length; i++) {
-
+				
 			var innerNav = '';
 			if (myObj.items[i].items.length > 0) {
 				
@@ -39,19 +39,8 @@ xhr.onload = function() {
 
 		document.querySelector('.nav-items').innerHTML = nav;
 
-		// nav function
-		var el = document.querySelector('.nav-item');
-		if(el) {
-			el.addEventListener("click", function(event) {
-				var background = document.querySelector('.background')
-		    	console.log('hit');
-				if (background.style.display === "none") {
-			        background.style.display = "block";
-			    } else {
-			        background.style.display = "none";
-			    }
-			})
-		}
+		
+
 			
 
     } else {
@@ -60,30 +49,37 @@ xhr.onload = function() {
 };
 xhr.send();
 
-// function navigation() {
-// 	var el = document.querySelector('.nav-item');
-// 	if(el) {
-// 		el.addEventListener("click", function(event) {
-// 			var background = document.querySelector('.background')
-// 	    	var className = background.getAttribute("display");
-// 	    	console.log('hit');
-// 			if(className=="none") {
-// 			background.className = "block";
-// 			}
-// 			else{
-// 			background.className = "none";
-// 			}
-// 		})
-// 	}
-	
-// }
+//nav
+	var el = document.querySelector('.nav-items');
+	var body = document.querySelector('body');
+	if(el) {
+		el.addEventListener("click", function(e) {
+			var background = document.querySelector('.background')
+			var body = document.querySelector('body');
 
-// navigation();
+			console.log(e.target.closest('.nav-item'));
 
-// var el = document.getElementById('overlayBtn');
-// if(el){
-//   el.addEventListener('click', swapper, false);
-// }
+			if (background.style.display !== "block") {
+		        background.style.display = "block";
+		        e.target.closest('.nav-item').classList.add('active');
+
+		        if (background.style.display === "block") {
+					background.addEventListener("click", function(event){
+						background.style.display = "none";
+						e.target.closest('.nav-item').classList.remove('active');
+
+					});
+		        }
+
+		    } else {
+		        background.style.display = "none";
+		        e.target.closest('.nav-item').classList.remove('active');
+
+		    }
+		})
+	}
+
+
 
 // var data = '';
 // console.log(this);

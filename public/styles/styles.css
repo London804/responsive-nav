@@ -18,17 +18,36 @@ body {
   height: 100%; }
 
 li {
-  list-style-type: none; }
+  list-style-type: none;
+  cursor: pointer; }
 
 a {
   text-decoration: none;
   color: inherit; }
 
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  height: 3.75rem;
+  padding-left: 1.5rem;
+  background: #000; }
+
+.nav-item {
+  transition: all 0.218s ease; }
+  .nav-item.active .nav-item-inner {
+    display: block; }
+
+.nav-items {
+  display: none; }
+
 .nav-header {
   display: none; }
 
 .nav-item-inner {
-  display: none; }
+  display: none;
+  transition: all 0.218s ease; }
 
 .footer {
   display: flex;
@@ -46,20 +65,15 @@ a {
   display: flex;
   align-items: flex-end; }
 
-.nav {
-  position: relative;
-  z-index: 100; }
-
 @media (min-width: 768px) {
   .nav {
-    display: flex;
-    align-items: center;
-    height: 4.5rem;
-    padding-left: 1.5rem;
-    background: #000; }
+    height: 4.5rem; }
 
   .nav-header {
     display: flex; }
+
+  .nav-open {
+    display: none; }
 
   .nav-items {
     display: flex;
@@ -76,11 +90,10 @@ a {
     align-items: center;
     position: relative;
     height: 100%;
-    color: #eee;
-    transition: all 0.218s ease; }
+    color: #eee; }
     .nav-item span {
       padding: 0 1.5rem; }
-    .nav-item:hover {
+    .nav-item:hover, .nav-item.active {
       background: #fff;
       color: #000; }
     .nav-item > a {
@@ -92,10 +105,10 @@ a {
   .nav-item-inner {
     position: absolute;
     top: 4.5rem;
-    min-width: 150%;
+    min-width: 160%;
     background: #fff; }
     .nav-item-inner div {
-      padding: 1rem 0 1rem 1.5rem;
+      padding: 0.75rem 0 0.75rem 1.5rem;
       color: #333; }
       .nav-item-inner div:hover {
         background: #eee; }
