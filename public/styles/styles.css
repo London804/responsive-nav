@@ -1,4 +1,9 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
 html, body {
+  background: url("../images/main-img.png") no-repeat center center fixed;
+  background-size: cover;
   padding: 0;
   margin: 0;
   font-family: Founders Grotesk Regular; }
@@ -12,6 +17,22 @@ a {
 
 .nav-header {
   display: none; }
+
+.footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 3.75rem;
+  padding: 0.5rem;
+  text-align: center;
+  background-color: #efefef; }
+
+.footer-content {
+  display: flex;
+  align-items: flex-end; }
 
 @media (min-width: 768px) {
   .nav {
@@ -34,14 +55,30 @@ a {
     .nav-items li {
       display: flex;
       align-items: center;
+      position: relative;
       height: 100%;
-      padding: 0 1.5rem;
       color: #eee;
       transition: all 0.218s ease; }
+      .nav-items li span {
+        padding: 0 1.5rem; }
       .nav-items li:hover {
         background: #fff;
         color: #000; }
     .nav-items p {
-      font-size: 0.75rem; } }
+      font-size: 0.75rem; }
+
+  .nav-item-inner {
+    position: absolute;
+    top: 4.5rem;
+    width: 100%;
+    background: #fff; }
+    .nav-item-inner div {
+      margin: 1rem 0 1rem 1.5rem;
+      color: #333; }
+      .nav-item-inner div:hover {
+        background: #eee; }
+
+  .footer-content {
+    width: 60.5rem; } }
 
 /*# sourceMappingURL=styles.css.map */
