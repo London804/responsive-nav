@@ -1,3 +1,5 @@
+@import 'fonts';
+
 $white: #fff;
 $light-gray: #eee;
 $dark-gray: #333;
@@ -14,7 +16,8 @@ body {
 	background-size: cover;
 	padding: 0;
 	margin: 0;
-	font-family: Founders Grotesk Regular;
+	font-family: 'Founders Grotesk';
+	font-weight: 300;
 
 }
 
@@ -36,6 +39,9 @@ li {
 a {
 	text-decoration: none;
 	color: inherit;
+	font-size: 0.8125rem;
+	line-height: 1rem;
+	font-weight: 200;
 }
 
 .nav {
@@ -49,8 +55,46 @@ a {
 
 }
 
+.nav-items {
+	// display: none;
+    background: white;
+    position: absolute;
+    width: 80%;
+    top: 3.75rem;
+    left: 0;
+    margin-top: 0;
+    padding: 0;
+
+}
+
+.nav-header {
+	display: none;
+}
+
 .nav-item {
 	transition: all $transition-timing ease;
+
+	span {
+		display: inline-block;
+		padding: 0.75rem 1.5rem;
+
+	}
+
+	// &:hover {
+	// 	background: $light-gray;
+	// }
+
+	> a {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		font-size: 1.125rem;
+		line-height: 1.5rem;
+
+		&:hover {
+			background: $light-gray;
+		}
+	}
 
 	&.active {
 		.nav-item-inner {
@@ -59,17 +103,15 @@ a {
 	}
 }
 
-.nav-items {
-	display: none;
-}
-
-.nav-header {
-	display: none;
-}
-
 .nav-item-inner {
 	display: none;
 	transition: all $transition-timing ease;
+
+	div {
+		&:hover {
+			background: $light-gray;
+		}
+	}
 }
 
 .footer {
@@ -103,11 +145,19 @@ a {
 		display: none;
 	}
 
+	a {
+		font-size: 0.8125rem;
+		line-height: 1rem;
+	}
+
 	.nav-items {
 		display: flex;
 		align-items: center;
+		position: initial;
 		height: 4.5rem;
 		background: $black;
+		margin-top: 1rem;
+		padding-left: 2.5rem;
 
 		ul {
 		padding-left: 3rem;
@@ -125,30 +175,34 @@ a {
 		align-items: center;
 		position: relative;
 		height: 100%;
+		padding: 0;
 		color: $light-gray;
 
 		span {
 			padding: 0 1.5rem;
 
 		}
+
+		a {
+			padding: 0;
+		}
 		
-		&:hover,
 		&.active {
 			background: $white;
 			color: $black;
 		}
 
 		> a {
-			display: flex;
 			align-items: center;
-			width: 100%;
-			height: 100%;
+
+			&:hover {
+				background: $white;
+				color: $black;
+			}
 		}
 
 
 	}
-
-
 
 	.nav-item-inner {
 		position: absolute;
@@ -159,10 +213,6 @@ a {
 		div {
 			padding: 0.75rem 0 0.75rem 1.5rem;
 			color: $dark-gray;
-
-			&:hover {
-				background: $light-gray;
-			}
 		}
 	}
 
