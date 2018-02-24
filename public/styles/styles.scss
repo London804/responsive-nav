@@ -12,23 +12,12 @@ $transition-timing: 0.218s;
 }
 
 body {
-	background: url('../images/main-img.png') no-repeat center center fixed;
+	background: url('../images/office_2.png') no-repeat center center fixed;
 	background-size: cover;
 	padding: 0;
 	margin: 0;
 	font-family: 'Founders Grotesk';
 
-
-}
-
-.background {
-	display: none;
-	background-color: $translucent-black;
-	position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
 }
 
 li {
@@ -44,6 +33,38 @@ a {
 	font-weight: 200;
 }
 
+.background {
+
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.callout {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	div {
+		display: none;
+		margin-bottom: 7.5rem;
+	}
+
+	h1 {
+		font-size: 7rem;
+		margin: 0.625rem;
+		color: $white;
+	}
+}
+
 .nav {
 	display: flex;
 	align-items: center;
@@ -53,6 +74,9 @@ a {
 	padding-left: 1.5rem;
 	background: $black;
 
+}
+.nav-content {
+	height: 100vh;
 }
 
 .nav-items {
@@ -65,14 +89,16 @@ a {
     padding: 0;
     transform: translateX(-100%);
 
+    // transition: transform 1.5s ease;
+
     &.animate {
-    	transition: all 1.5s ease;
+    	transition: transform 1.5s ease;
     	transform: translateX(0%);
     }
 
 }
 
-@keyframes slide {
+@keyframes slideLeft {
 	from {
 		left: 1.5rem;
 	}
@@ -81,6 +107,18 @@ a {
 		left: 93.5%;
 		visibility: hidden;
 	}
+}
+
+@keyframes slideRight {
+	from {
+		right: 1.5rem;
+	}
+	to {
+		right: 93.5%;
+		visibility: hidden;
+		
+	}
+
 }
 
 .nav-header {
@@ -93,7 +131,7 @@ a {
 	transition: all 1.5s ease;
 
 	&.animate {
-		animation: slide;
+		animation: slideLeft;
   		animation-duration: 1.5s;
   		opacity: 0; 
 
@@ -104,6 +142,13 @@ a {
 .nav-close {
 	position: absolute;
 	right: 1.5rem;
+	transition: all 1.5s ease;
+
+	&.animate {
+		animation: slideRight;
+  		animation-duration: 1.5s;
+  		opacity: 0; 
+	}
 
 }
 
@@ -159,6 +204,7 @@ a {
 .footer {
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	position: absolute;
  	right: 0;
  	bottom: 0;
@@ -166,15 +212,27 @@ a {
   	min-height: 3.75rem;
  	padding: 0.5rem;
  	text-align: center;
- 	background-color: #efefef;
+ 	background-color: $white;
 }
 
 .footer-content {
 	display: flex;
 	align-items: flex-end;
+	font-size: 0.75rem;
+	line-height: 1rem;
+}
+
+.footer-callout {
+	margin: 3.125rem 0;
+	h1 {
+		font-size: 2.75rem;
+		font-weight: 500;
+		margin: 0.5rem;
+	}
 }
 
 @media (min-width: 768px) {
+
 	.nav {
 		height: 4.5rem;
 	}
@@ -187,6 +245,10 @@ a {
 	.nav-open,
 	.nav-close {
 		display: none;
+	}
+
+	.nav-content {
+		height: initial;
 	}
 
 	a {
@@ -262,8 +324,26 @@ a {
 		}
 	}
 
+	.callout {
+		div {
+			display: block;
+			
+		}
+	}
+
+	.footer {
+		height: initial;
+	}
+
 	.footer-content {
-		width: 60.5rem;
+		max-width: 60.5rem;
+		font-size: 1.125rem;
+		line-height: 1.75rem;
+		margin: 0 auto;
+	}
+
+	.footer-callout {
+		display: none;
 	}
 
 

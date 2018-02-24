@@ -9,6 +9,7 @@ var x = '';
 var ul = "<ul>" + "<ul>";
 var wrapper = '';
 var url = '';
+var navItems = document.querySelector('.nav-items');
 
 
 xhr.onload = function() {
@@ -34,10 +35,9 @@ xhr.onload = function() {
 			nav += `<li class="nav-item" id="tar_ ${i}">
 				<a href="${url}"><span>${myObj.items[i].label}</span></a>
 				<div class="nav-item-inner">${innerNav}</div></li>`;
-				
 		}
 
-		document.querySelector('.nav-items').innerHTML = nav;
+		navItems.innerHTML = nav;
 
 		
 
@@ -50,29 +50,34 @@ xhr.onload = function() {
 xhr.send();
 
 //nav
-	var el = document.querySelector('.nav-items');
+	
 	var body = document.querySelector('body');
-	if(el) {
-		el.addEventListener("click", function(e) {
-			var background = document.querySelector('.background')
+	if(navItems) {
+		navItems.addEventListener("click", function(e) {
+			var background = document.querySelector('.background');
+			var callout = document.querySelectorAll('.callout, .footer');
 			var body = document.querySelector('body');
+
+			console.log(callout);
 
 			console.log(e.target.closest('.nav-item'));
 
-			if (background.style.display !== "block") {
-		        background.style.display = "block";
+			if (background.style.backgroundColor !== "rgba(0, 0, 0, 0.5)") {
+		        background.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 		        e.target.closest('.nav-item').classList.add('active');
 
-		        if (background.style.display === "block") {
-					background.addEventListener("click", function(event){
-						background.style.display = "none";
+		        if (background.style.backgroundColor === "rgba(0, 0, 0, 0.5)") {
+					callout.forEach(function(elem) {
+						elem.addEventListener("click", function(event) {
+						background.style.backgroundColor  = "rgba(0, 0, 0, 0.3)";
 						e.target.closest('.nav-item').classList.remove('active');
-
+						
+						});
 					});
 		        }
 
 		    } else {
-		        background.style.display = "none";
+		        background.style.backgroundColor = "rgba(0, 0, 0, 0.3)";
 		        e.target.closest('.nav-item').classList.remove('active');
 
 		    }
@@ -80,17 +85,19 @@ xhr.send();
 	}
 
 	function slide(e) {
-		var element = document.querySelector('.nav-items');
-		element.classList.add("animate");
+		var navOpen = document.querySelector('.nav-open');
+		navItems.classList.add("animate");
 		e.classList.add("animate");
+
 	}
 
-	// function close(){
-	// 	var element = document.querySelector('.nav-items');
-	// 	element.classList.remove("animate");
-	// 	e.classList.remove("animate");
+	function slideback(e) {
+		var navOpen = document.querySelector('.nav-open');
+		navItems.classList.remove("animate");
+		navOpen.classList.remove("animate");
+		e.classList.add("animate");
 
-	// }
+	}
 
 
 
