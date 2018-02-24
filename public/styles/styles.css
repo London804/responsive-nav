@@ -21,8 +21,7 @@ body {
   background-size: cover;
   padding: 0;
   margin: 0;
-  font-family: 'Founders Grotesk';
-  font-weight: 300; }
+  font-family: 'Founders Grotesk'; }
 
 .background {
   display: none;
@@ -41,7 +40,6 @@ a {
   text-decoration: none;
   color: inherit;
   font-size: 0.8125rem;
-  line-height: 1rem;
   font-weight: 200; }
 
 .nav {
@@ -60,10 +58,33 @@ a {
   top: 3.75rem;
   left: 0;
   margin-top: 0;
-  padding: 0; }
+  padding: 0;
+  transform: translateX(-100%); }
+  .nav-items.animate {
+    transition: all 1.5s ease;
+    transform: translateX(0%); }
 
+@keyframes slide {
+  from {
+    left: 1.5rem; }
+  to {
+    left: 93.5%;
+    visibility: hidden; } }
 .nav-header {
-  display: none; }
+  visibility: hidden; }
+
+.nav-open {
+  position: absolute;
+  height: 24px;
+  transition: all 1.5s ease; }
+  .nav-open.animate {
+    animation: slide;
+    animation-duration: 1.5s;
+    opacity: 0; }
+
+.nav-close {
+  position: absolute;
+  right: 1.5rem; }
 
 .nav-item {
   transition: all 0.218s ease; }
@@ -74,8 +95,7 @@ a {
     display: flex;
     width: 100%;
     height: 100%;
-    font-size: 1.125rem;
-    line-height: 1.5rem; }
+    font-size: 1.125rem; }
     .nav-item > a:hover {
       background: #eee; }
   .nav-item.active .nav-item-inner {
@@ -84,8 +104,13 @@ a {
 .nav-item-inner {
   display: none;
   transition: all 0.218s ease; }
-  .nav-item-inner div:hover {
-    background: #eee; }
+  .nav-item-inner div {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    padding-left: 1.5rem; }
+    .nav-item-inner div:hover {
+      background: #eee; }
 
 .footer {
   display: flex;
@@ -108,14 +133,15 @@ a {
     height: 4.5rem; }
 
   .nav-header {
-    display: flex; }
+    display: flex;
+    visibility: initial; }
 
-  .nav-open {
+  .nav-open,
+  .nav-close {
     display: none; }
 
   a {
-    font-size: 0.8125rem;
-    line-height: 1rem; }
+    font-size: 0.8125rem; }
 
   .nav-items {
     display: flex;
@@ -124,7 +150,8 @@ a {
     height: 4.5rem;
     background: #000;
     margin-top: 1rem;
-    padding-left: 2.5rem; }
+    padding-left: 2.5rem;
+    transform: translateX(0%); }
     .nav-items ul {
       padding-left: 3rem; }
     .nav-items p {
@@ -156,6 +183,7 @@ a {
     min-width: 160%;
     background: #fff; }
     .nav-item-inner div {
+      height: 2.5rem;
       padding: 0.75rem 0 0.75rem 1.5rem;
       color: #333; }
 

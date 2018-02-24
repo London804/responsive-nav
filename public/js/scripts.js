@@ -79,6 +79,19 @@ xhr.send();
 		})
 	}
 
+	function slide(e) {
+		var element = document.querySelector('.nav-items');
+		element.classList.add("animate");
+		e.classList.add("animate");
+	}
+
+	// function close(){
+	// 	var element = document.querySelector('.nav-items');
+	// 	element.classList.remove("animate");
+	// 	e.classList.remove("animate");
+
+	// }
+
 
 
 // var data = '';
