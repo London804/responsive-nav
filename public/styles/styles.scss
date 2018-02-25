@@ -34,12 +34,14 @@ a {
 }
 
 .background {
-
+	display: none;
 	position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: $translucent-black;
+    z-index: 10;
 
 }
 
@@ -73,6 +75,15 @@ a {
 	height: 3.75rem;
 	padding-left: 1.5rem;
 	background: $black;
+	z-index: 100;
+
+	&.active {
+		.nav-close {
+			opacity: 1;
+			transition: all 1.5s ease; 
+			z-index: 100;
+		}
+	}
 
 }
 .nav-content {
@@ -133,6 +144,7 @@ a {
 	&.animate {
 		animation: slideLeft;
   		animation-duration: 1.5s;
+  		// animation-fill-mode: forwards;
   		opacity: 0; 
 
 
@@ -140,13 +152,16 @@ a {
 }
 
 .nav-close {
+	opacity: 0;
 	position: absolute;
 	right: 1.5rem;
 	transition: all 1.5s ease;
+	z-index: 0;
 
 	&.animate {
 		animation: slideRight;
   		animation-duration: 1.5s;
+  		// animation-fill-mode: forwards;
   		opacity: 0; 
 	}
 
