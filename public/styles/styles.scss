@@ -11,12 +11,17 @@ $transition-timing: 0.218s;
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background: url('../images/office_2.png') no-repeat center center fixed;
 	background-size: cover;
 	padding: 0;
 	margin: 0;
 	font-family: 'Founders Grotesk';
+	height: 100%;
 
 }
 
@@ -107,6 +112,11 @@ a {
     	transform: translateX(0%);
     }
 
+    &:after {
+    	content: "copyright";
+    	display: block;
+    }
+
 }
 
 @keyframes slideLeft {
@@ -167,7 +177,27 @@ a {
 
 }
 
+#tar_1,
+#tar_2,
+#tar_3,
+#tar_6 {
+	&:after {
+		content: "";
+		position: absolute;
+		right: 0.75rem;
+		top: 0.935rem;
+		border: solid $dark-gray;
+		border-width: 0 2px 2px 0;
+		display: inline-block;
+		padding: 4px;
+		transform: rotate(45deg);
+		transition: all $transition-timing ease;
+		// transform: rotate(-135deg);
+	}
+}
+
 .nav-item {
+	position: relative;
 	transition: all $transition-timing ease;
 
 	span {
@@ -196,6 +226,17 @@ a {
 		.nav-item-inner {
 			display: block;
 		}
+
+		&#tar_1,
+		&#tar_2,
+		&#tar_3,
+		&#tar_6 {
+
+			&:after {
+				transform: rotate(-135deg);
+			}
+		}
+
 	}
 }
 
@@ -247,6 +288,15 @@ a {
 }
 
 @media (min-width: 768px) {
+
+	#tar_1,
+	#tar_2,
+	#tar_3,
+	#tar_6 {
+		&:after {
+			content: initial;
+		}
+	}
 
 	.nav {
 		height: 4.5rem;

@@ -16,12 +16,16 @@
 *, *:before, *:after {
   box-sizing: border-box; }
 
+html {
+  height: 100%; }
+
 body {
   background: url("../images/office_2.png") no-repeat center center fixed;
   background-size: cover;
   padding: 0;
   margin: 0;
-  font-family: 'Founders Grotesk'; }
+  font-family: 'Founders Grotesk';
+  height: 100%; }
 
 li {
   list-style-type: none;
@@ -87,6 +91,9 @@ a {
   .nav-items.animate {
     transition: transform 1.5s ease;
     transform: translateX(0%); }
+  .nav-items:after {
+    content: "copyright";
+    display: block; }
 
 @keyframes slideLeft {
   from {
@@ -123,7 +130,23 @@ a {
     animation-duration: 1.5s;
     opacity: 0; }
 
+#tar_1:after,
+#tar_2:after,
+#tar_3:after,
+#tar_6:after {
+  content: "";
+  position: absolute;
+  right: 0.75rem;
+  top: 0.935rem;
+  border: solid #333;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: all 0.218s ease; }
+
 .nav-item {
+  position: relative;
   transition: all 0.218s ease; }
   .nav-item span {
     display: inline-block;
@@ -137,6 +160,8 @@ a {
       background: #eee; }
   .nav-item.active .nav-item-inner {
     display: block; }
+  .nav-item.active#tar_1:after, .nav-item.active#tar_2:after, .nav-item.active#tar_3:after, .nav-item.active#tar_6:after {
+    transform: rotate(-135deg); }
 
 .nav-item-inner {
   display: none;
@@ -176,6 +201,12 @@ a {
     margin: 0.5rem; }
 
 @media (min-width: 768px) {
+  #tar_1:after,
+  #tar_2:after,
+  #tar_3:after,
+  #tar_6:after {
+    content: initial; }
+
   .nav {
     height: 4.5rem; }
 
