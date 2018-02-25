@@ -48,16 +48,20 @@ xhr.send();
 
 //nav
 	
-	var body = document.querySelector('body');
 	if(navItems) {
 		navItems.addEventListener("click", function(e) {
 			var background = document.querySelector('.background');
-			var body = document.querySelector('body');
-			var callout = document.querySelectorAll('.background, .nav-close')
+			// var body = document.querySelector('body');
+			var callout = document.querySelectorAll('.background, .nav-close, .nav-item')
 			console.log(e.target.closest('.nav-item'));
 
 			if (background.style.display !== "block") {
 		        background.style.display = "block";
+
+		        for( let i = 0; i < e.target.closest('.nav-items').children.length; i++ ) {
+		        	e.target.closest('.nav-items').children[i].classList.remove('active');
+		        }
+
 		        e.target.closest('.nav-item').classList.add('active');
 
 		        if (background.style.display === "block") {
