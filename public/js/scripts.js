@@ -85,25 +85,35 @@ xhr.send();
 
 	function slide(e) {
 		var navOpen = document.querySelector('.nav-open');
+		var navHeader = document.querySelector('.nav-header');
+		var navClose = document.querySelector('.nav-close');
 
 		if (navItems.classList.length === 1) {
-			navItems.classList.add("animate");
-			e.classList.add("animate");
+			navItems.classList.add("animate"); // nav ul
+			e.classList.add("animate");  // button click
+			navHeader.classList.add("animate"); // elephant logo
 			console.log(e.closest('.nav'));
-			e.closest('.nav').classList.add('active');
-
-
+			e.closest('.nav').classList.add('active'); // nav
+			setTimeout(close, 500);
+			function close() {
+				navClose.classList.remove("animate");
+			}
+	
 		} else {
-			navItems.classList.remove("animate");
-			navOpen.classList.remove("animate");
-			e.closest('.nav').classList.remove('active');
+			navItems.classList.remove("animate"); // nav ul
+			navOpen.classList.remove("animate");  // nav open button
+			navHeader.classList.remove("animate"); // elephant logo
+			e.closest('.nav').classList.remove('active'); // nav
+			// e.style.display = "block";					// display of button clicked
 			console.log('this', e.classList.length);
+			e.classList.remove("animate");
 
 			if(e.classList.length === 2) {
-
 				e.classList.remove('animate');	
+				// e.style.display = 'block'
 			} else {
 				e.classList.add("animate");
+				// e.style.display = "none";
 				
 			}
 
