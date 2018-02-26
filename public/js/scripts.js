@@ -84,6 +84,7 @@ xhr.send();
 	}
 
 	function slide(e) {
+		
 		var navOpen = document.querySelector('.nav-open');
 		var navHeader = document.querySelector('.nav-header');
 		var navClose = document.querySelector('.nav-close');
