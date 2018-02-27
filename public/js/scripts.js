@@ -10,6 +10,7 @@ var ul = "<ul>" + "<ul>";
 var wrapper = '';
 var url = '';
 var navItems = document.querySelector('.nav-items');
+var background = document.querySelector('.background');
 
 
 xhr.onload = function() {
@@ -51,7 +52,6 @@ xhr.send();
 	
 	if(navItems) {
 		navItems.addEventListener("click", function(e) {
-			var background = document.querySelector('.background');
 			// var body = document.querySelector('body');
 			var callout = document.querySelectorAll('.background, .nav-close, .nav-item')
 			console.log(e.target.closest('.nav-item'));
@@ -88,8 +88,10 @@ xhr.send();
 		var navOpen = document.querySelector('.nav-open');
 		var navHeader = document.querySelector('.nav-header');
 		var navClose = document.querySelector('.nav-close');
+		var navAnimate = document.querySelector('.nav-transition');
 
 		if (navItems.classList.length === 1) {
+			navAnimate.classList.add("animate");
 			navItems.classList.add("animate"); // nav ul
 			e.classList.add("animate");  // button click
 			navHeader.classList.add("animate"); // elephant logo
@@ -99,6 +101,7 @@ xhr.send();
 			function close() {
 				navClose.classList.remove("animate");
 			}
+
 	
 		} else {
 			navItems.classList.remove("animate"); // nav ul
@@ -115,9 +118,7 @@ xhr.send();
 			} else {
 				e.classList.add("animate");
 				// e.style.display = "none";
-				
 			}
-
 
 		}
 	}
