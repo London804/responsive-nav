@@ -1,0 +1,23 @@
+@keyframes slideLeft {
+    from {
+        left: 1.5rem;
+    }
+
+    to {
+        // left: 95%;
+        right: 1.5rem;
+        // visibility: hidden;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        right: 1.5rem;
+    }
+
+    to {
+        // right: 95%;
+        left: 1.5rem;
+        // visibility: hidden;
+    }
+}

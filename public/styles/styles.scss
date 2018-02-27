@@ -1,100 +1,89 @@
-
 @import 'base';
 
 *, *:before, *:after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-	height: 100%;
+    height: 100%;
 }
 
 body {
-	background: url('../images/office_2.png') no-repeat center center fixed;
-	background-size: cover;
-	padding: 0;
-	margin: 0;
-	font-family: 'Founders Grotesk';
-	height: 100%;
-
+    background: url('../images/office_2.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    font-family: 'Founders Grotesk';
+    height: 100%;
 }
 
 li {
-	list-style-type: none;
-	cursor: pointer;
+    list-style-type: none;
+    cursor: pointer;
 }
 
 a {
-	text-decoration: none;
-	color: inherit;
-	font-size: 0.8125rem;
-	// line-height: 1rem;
-	font-weight: 200;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.8125rem;
+    font-weight: 200;
 }
 
 .background {
-	display: none;
-	position: absolute;
+    display: none;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: $translucent-black;
     z-index: 10;
-
 }
 
-
 .callout {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	position: absolute;
-	width: 100%;
-	height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 
-	div {
-		display: none;
-		// margin-bottom: 7.5rem;
-	}
+    div {
+        display: none;
+    }
 
-	h1 {
-		font-size: 7rem;
-		margin: 0.625rem;
-		color: $white;
-	}
+    h1 {
+        font-size: 7rem;
+        margin: 0.625rem;
+        color: $white;
+    }
 }
 
 .nav {
-	display: flex;
-	align-items: center;
-	position: absolute;
-	width: 100%;
-	height: 3.75rem;
-	padding-left: 1.5rem;
-	background: $black;
-	z-index: 100;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 3.75rem;
+    padding-left: 1.5rem;
+    background: $black;
+    z-index: 100;
 
-	&.active {
-		.nav-close {
-			opacity: 1;
-			transition: all 0.5s ease; 
-			z-index: 100;
-		}
-	}
-
+    &.active {
+        .nav-close {
+            opacity: 1;
+            transition: all 0.5s ease; 
+            z-index: 100;
+        }
+    }
 }
 
 .nav-container {
-	position: absolute;
-	width: 100%;
-	height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
-
-// .nav-content {
-// 	height: 100vh;
-// }
 
 .nav-items {
     background: white;
@@ -106,332 +95,288 @@ a {
     margin-top: 0;
     padding: 0;
     transform: translateX(-100%);
-	transition: transform 0.5s ease;
-	overflow: scroll;
+    transition: transform 0.5s ease;
+    overflow: auto;
 
     &.animate {
-    	transform: translateX(0%);
+        transform: translateX(0%);
     }
 
     &:after {
-    	content: "© 2018 Elephant. All Rights Reserved.";
-    	display: block;
-    	position: absolute;
-    	bottom: 0.625rem;
-    	margin-left: 1.5rem;
-    	font-weight: 200;
-
+        content: "© 2018 Elephant. All Rights Reserved.";
+        display: block;
+        position: absolute;
+        bottom: 0.625rem;
+        margin-left: 1.5rem;
+        font-weight: 200;
     }
-
-}
-
-@keyframes slideLeft {
-	from {
-		left: 1.5rem;
-	}
-
-	to {
-		// left: 95%;
-		right: 1.5rem;
-		// visibility: hidden;
-	}
-}
-
-@keyframes slideRight {
-	from {
-		right: 1.5rem;
-	}
-
-	to {
-		// right: 95%;
-		left: 1.5rem;
-		// visibility: hidden;
-	}
-
 }
 
 .nav-header {
-	position: relative;
-	left: -95%;
-	height: 1.5rem;
-	transition: all 0.5s ease;
+    position: relative;
+    left: -95%;
+    height: 1.5rem;
+    transition: all 0.5s ease;
 
-
-	&.animate {
-		left: 0;
-	}
+    &.animate {
+        left: 0;
+    }
 }
 
 .nav-open {
-	position: absolute;
-	height: 24px;
-	transition: all 0.5s ease;
-	transform: translateX(0%);
+    position: absolute;
+    height: 24px;
+    transition: all 0.5s ease;
+    transform: translateX(0%);
 
-
-	&.animate {
-		animation: slideLeft;
-		animation-duration: 0.5s;
-  		visibility: hidden; 
-	}
+    &.animate {
+        animation: slideLeft;
+        animation-duration: 0.5s;
+        visibility: hidden; 
+    }
 }
 
 .nav-close {
-	opacity: 0;
-	position: absolute;
-	right: 1.5rem;
-	width: 1.5rem;
-	height: 1.5rem;
-	transition: all 0.5s ease;
-	z-index: 0;
+    opacity: 0;
+    position: absolute;
+    right: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: all 0.5s ease;
+    z-index: 0;
 
-	&.animate {
-		animation: slideRight;
-  		animation-duration: 0.5s;
-  		visibility: hidden;
-	}
-
+    &.animate {
+        animation: slideRight;
+        animation-duration: 0.5s;
+        visibility: hidden;
+    }
 }
 
 #tar_1,
 #tar_2,
 #tar_3,
 #tar_6 {
-	&:after {
-		content: "";
-		position: absolute;
-		right: 0.75rem;
-		top: 0.935rem;
-		border: solid $dark-gray;
-		border-width: 0 2px 2px 0;
-		display: inline-block;
-		padding: 4px;
-		transform: rotate(45deg);
-		transition: all $transition-timing ease;
-	}
+    &:after {
+        content: "";
+        position: absolute;
+        right: 0.75rem;
+        top: 0.935rem;
+        border: solid $dark-gray;
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(45deg);
+        transition: all $transition-timing ease;
+    }
 }
 
 .nav-item {
-	position: relative;
-	transition: all $transition-timing ease;
+    position: relative;
+    transition: all $transition-timing ease;
 
-	span {
-		display: inline-block;
-		padding: 0.75rem 1.5rem;
+    span {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+    }
 
-	}
+    > a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        font-size: 1.125rem;
 
-	// &:hover {
-	// 	background: $light-gray;
-	// }
+        &:hover {
+            background: $light-gray;
+        }
+    }
 
-	> a {
-		display: flex;
-		width: 100%;
-		height: 100%;
-		font-size: 1.125rem;
-		// line-height: 1.5rem;
+    &.active {
+        .nav-item-inner {
+            display: block;
+        }
 
-		&:hover {
-			background: $light-gray;
-		}
-	}
+        &#tar_1,
+        &#tar_2,
+        &#tar_3,
+        &#tar_6 {
 
-	&.active {
-		.nav-item-inner {
-			display: block;
-		}
-
-		&#tar_1,
-		&#tar_2,
-		&#tar_3,
-		&#tar_6 {
-
-			&:after {
-				transform: rotate(-135deg);
-			}
-		}
-
-	}
+            &:after {
+                transform: rotate(-135deg);
+            }
+        }
+    }
 }
 
 .nav-item-inner {
-	display: none;
-	transition: all $transition-timing ease;
+    display: none;
+    transition: all $transition-timing ease;
 
-	div {
-		display: flex;
-		align-items: center;
-		height: 1.5rem;
-		padding-left: 1.5rem;
+    div {
+        display: flex;
+        align-items: center;
+        height: 1.5rem;
+        padding-left: 1.5rem;
 
-
-		&:hover {
-			background: $light-gray;
-		}
-	}
+        &:hover {
+            background: $light-gray;
+        }
+    }
 }
 
 .footer {
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	position: fixed;
- 	right: 0;
- 	bottom: 0;
-  	left: 0;
-  	min-height: 3.75rem;
- 	padding: 0.5rem;
- 	text-align: center;
- 	background-color: $white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 3.75rem;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: $white;
 }
 
 .footer-content {
-	display: flex;
-	align-items: flex-end;
-	font-size: 0.75rem;
-	line-height: 1rem;
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
 }
 
 .footer-callout {
-	margin: 3.125rem 0;
-	h1 {
-		font-size: 2.75rem;
-		font-weight: 500;
-		margin: 0.5rem;
-	}
+    margin: 3.125rem 0;
+    h1 {
+        font-size: 2.75rem;
+        font-weight: 500;
+        margin: 0.5rem;
+    }
 }
 
 @media (min-width: 768px) {
 
-	#tar_1,
-	#tar_2,
-	#tar_3,
-	#tar_6 {
-		&:after {
-			content: initial;
-		}
-	}
+    #tar_1,
+    #tar_2,
+    #tar_3,
+    #tar_6 {
+        &:after {
+            content: initial;
+        }
+    }
 
-	.nav {
-		height: 4.5rem;
-	}
+    .nav {
+        height: 4.5rem;
+    }
 
-	.nav-header {
-		display: flex;
-		left: 0;
-	}
+    .nav-header {
+        display: flex;
+        left: 0;
+    }
 
-	.nav-open,
-	.nav-close {
-		display: none;
-	}
+    .nav-open,
+    .nav-close {
+        display: none;
+    }
 
-	.nav-content {
-		height: initial;
-	}
+    .nav-content {
+        height: initial;
+    }
 
-	a {
-		font-size: 0.8125rem;
-		// line-height: 1rem;
-	}
+    a {
+        font-size: 0.8125rem;
+    }
 
-	.nav-items {
-		display: flex;
-		align-items: center;
-		position: initial;
-		height: 4.5rem;
-		background: $black;
-		margin-top: 1rem;
-		padding-left: 2.5rem;
-		transform: translateX(0%);
-		overflow: initial;
+    .nav-items {
+        display: flex;
+        align-items: center;
+        position: initial;
+        height: 4.5rem;
+        background: $black;
+        margin-top: 1rem;
+        padding-left: 2.5rem;
+        transform: translateX(0%);
+        overflow: initial;
 
-		ul {
-		padding-left: 3rem;
+        ul {
+            padding-left: 3rem;
 
-		}
-
-
-		p {
-			font-size: 0.75rem;
-		}
-
-		&:after {
-    		content: "";
-    	}	
-
-	}
-
-	.nav-item {
-		display: flex;
-		align-items: center;
-		position: relative;
-		height: 100%;
-		padding: 0;
-		color: $light-gray;
-
-		span {
-			padding: 0 1.5rem;
-
-		}
-
-		a {
-			padding: 0;
-		}
-		
-		&.active {
-			background: $white;
-			color: $black;
-		}
-
-		> a {
-			align-items: center;
-
-			&:hover {
-				background: $white;
-				color: $black;
-			}
-		}
+        }
 
 
-	}
+        p {
+            font-size: 0.75rem;
+        }
 
-	.nav-item-inner {
-		position: absolute;
-		top: 4.5rem;
-		min-width: 160%;
-		background: $white;
+        &:after {
+            content: "";
+        }   
 
-		div {
-			height: 2.5rem; 
-			padding: 0.75rem 0 0.75rem 1.5rem;
-			color: $dark-gray;
-		}
-	}
+    }
 
-	.callout {
-		div {
-			display: block;
-			
-		}
-	}
+    .nav-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        padding: 0;
+        color: $light-gray;
 
-	.footer {
-		height: initial;
-	}
+        span {
+            padding: 0 1.5rem;
 
-	.footer-content {
-		max-width: 60.5rem;
-		font-size: 1.125rem;
-		line-height: 1.75rem;
-		margin: 0 auto;
-	}
+        }
 
-	.footer-callout {
-		display: none;
-	}
+        a {
+            padding: 0;
+        }
+        
+        &.active {
+            background: $white;
+            color: $black;
+        }
 
+        > a {
+            align-items: center;
 
+            &:hover {
+                background: $white;
+                color: $black;
+            }
+        }
+    }
+
+    .nav-item-inner {
+        position: absolute;
+        top: 4.5rem;
+        min-width: 160%;
+        background: $white;
+
+        div {
+            height: 2.5rem; 
+            padding: 0.75rem 0 0.75rem 1.5rem;
+            color: $dark-gray;
+        }
+    }
+
+    .callout {
+        div {
+            display: block;
+            
+        }
+    }
+
+    .footer {
+        height: initial;
+    }
+
+    .footer-content {
+        max-width: 60.5rem;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        margin: 0 auto;
+    }
+
+    .footer-callout {
+        display: none;
+    }
 }
-
