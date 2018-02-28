@@ -239,8 +239,7 @@ a {
     bottom: 0;
     left: 0;
     min-height: 5.5rem;
-    padding: 0.5rem;
-    text-align: center;
+    padding: 0 1.5rem;
     background-color: $white;
 }
 
@@ -254,12 +253,12 @@ a {
     p {
         width: 100%;
         margin: 0;
-        text-align: center;
     }
 }
 
 .footer-callout {
     margin: 3.125rem 0;
+
     h1 {
         font-size: 2.75rem;
         font-weight: 500;
@@ -387,6 +386,7 @@ a {
 
     .footer {
         height: initial;
+        padding: 0;
     }
 
     .footer-content {
@@ -394,6 +394,10 @@ a {
         font-size: 1.125rem;
         line-height: 1.75rem;
         margin: 0 auto;
+
+        p {
+            text-align: center;
+        }
     }
 
     .footer-callout {
