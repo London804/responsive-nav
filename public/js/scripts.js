@@ -44,9 +44,8 @@ xhr.onload = function() {
 xhr.send();
 
 // nav
-    if(navItems) {
+    if (navItems) {
         navItems.addEventListener("click", function(e) {
-            console.log(e.target.closest('.nav-item'));
 
             if (background.style.display !== "block") {
                 background.style.display = "block";
@@ -58,7 +57,7 @@ xhr.send();
         });
     }
 
-    function select(e){
+    function select(e) {
         // go through all of the items on the nav and remove the active class
         for( let i = 0; i < e.target.closest('.nav-items').children.length; i++ ) { 
             e.target.closest('.nav-items').children[i].classList.remove('active');
@@ -72,7 +71,6 @@ xhr.send();
             callout.forEach(function(elem) {
                 elem.addEventListener("click", function(event) {
                     background.style.display = "none";
-                    console.log('target', e.target);
                     if (e.target.closest('.nav-item') !== null) {
                         e.target.closest('.nav-item').classList.remove('active');
                     }
@@ -83,20 +81,19 @@ xhr.send();
 
     function slide(e) {
         if (navItems.classList.length === 1) {
-            navItems.classList.add("animate"); // nav ul
-            e.classList.add("animate");  // button click
-            navHeader.classList.add("animate"); // elephant logo
-            console.log(e.closest('.nav'));
+            navItems.classList.add('animate'); // nav ul
+            e.classList.add('animate');  // button click
+            navHeader.classList.add('animate'); // elephant logo
             e.closest('.nav').classList.add('active'); // nav
 
             setTimeout(close, 500);
             function close() {
-                navClose.classList.remove("animate");
+                navClose.classList.remove('animate');
             }
 
             background.style.display = "block";
 
-            check()
+            check();
     
         } else {
             close();
@@ -105,22 +102,21 @@ xhr.send();
 
     function check() {
         background.addEventListener("click", function() {
-            close()
+            close();
         });
     }
 
     function close() {
-        navItems.classList.remove("animate"); 
-        navHeader.classList.remove("animate"); 
+        navItems.classList.remove('animate'); 
+        navHeader.classList.remove('animate'); 
         document.querySelector('.nav').classList.remove('active');
         navClose.classList.remove('animate');
         background.style.display = "none";
 
         setTimeout(open, 500);
         function open() {
-            navOpen.classList.remove("animate");
+            navOpen.classList.remove('animate');
         }
 
-        navClose.classList.add("animate");
-        console.log('i have one');
+        navClose.classList.add('animate');
     }
