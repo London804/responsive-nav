@@ -7,7 +7,7 @@ var url = '';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', './api/navigation');
 
-// dom objects
+// dom variables
 var background = document.querySelector('.background');
 var callout = document.querySelectorAll('.background, .nav-close, .nav-item');
 var navItems = document.querySelector('.nav-items');
@@ -107,8 +107,8 @@ xhr.send();
     }
 
     function close() {
-        navItems.classList.remove("animate"); // nav ul
-        navHeader.classList.remove("animate"); //
+        navItems.classList.remove("animate"); 
+        navHeader.classList.remove("animate"); 
         document.querySelector('.nav').classList.remove('active');
         navClose.classList.remove('animate');
         background.style.display = "none";

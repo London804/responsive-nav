@@ -55,6 +55,7 @@ a {
 
     h1 {
         font-size: 7rem;
+        font-weight: 500;
         margin: 0.625rem;
         color: $white;
     }
@@ -109,6 +110,8 @@ a {
         bottom: 0.625rem;
         margin-left: 1.5rem;
         font-weight: 200;
+        font-family: 'Helvetica Neue Regular';
+        font-size: 0.75rem;
     }
 }
 
@@ -172,11 +175,13 @@ a {
 
 .nav-item {
     position: relative;
+    height: 2.625rem;
     transition: all $transition-timing ease;
 
     span {
         display: inline-block;
         padding: 0.75rem 1.5rem;
+        font-weight: 300;
     }
 
     > a {
@@ -216,6 +221,7 @@ a {
         align-items: center;
         height: 1.5rem;
         padding-left: 1.5rem;
+        padding-top: 0.25rem;
 
         &:hover {
             background: $light-gray;
@@ -225,13 +231,13 @@ a {
 
 .footer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     flex-direction: column;
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
-    min-height: 3.75rem;
+    min-height: 5.5rem;
     padding: 0.5rem;
     text-align: center;
     background-color: $white;
@@ -241,7 +247,14 @@ a {
     display: flex;
     align-items: flex-end;
     font-size: 0.75rem;
+    font-weight: 200;
     line-height: 1rem;
+
+    p {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
 }
 
 .footer-callout {
@@ -323,6 +336,8 @@ a {
 
         span {
             padding: 0 1.5rem;
+            font-weight: 200;
+
 
         }
 
@@ -352,8 +367,8 @@ a {
         background: $white;
 
         div {
-            height: 2.5rem; 
-            padding: 0.75rem 0 0.75rem 1.5rem;
+            height: 2.25rem; 
+            padding: 1rem 0 0.75rem 1.5rem;
             color: $dark-gray;
         }
     }
