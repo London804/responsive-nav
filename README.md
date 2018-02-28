@@ -79,7 +79,7 @@ $ npm install && npm start
 * **Logo** 13 Founders Grotesk Regular
 * **Primary Navigation** 18/24/2 Founders Grotesk Light
 * **Secondary Navigation** 13/18/1 Founders Grotesk Light
-* **Headline** 112/124/2 Founders Grotesk Regular
+* **Headline** 112/124/2 Founders Grotesk Medium
 * **Body Copy** 18/28/1 Founders Grotesk Light
 
 #### Mobile
