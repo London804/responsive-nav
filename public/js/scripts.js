@@ -64,15 +64,18 @@ xhr.send();
             e.target.closest('.nav-items').children[i].classList.remove('active');
         }
         // add the active class to the nav you just clicked
-        e.target.closest('.nav-item').classList.add('active');
-
+        if (e.target.closest('.nav-item') !== null) {
+            e.target.closest('.nav-item').classList.add('active'); 
+        }
         // add an event listener to all places that can close the nav
         if (background.style.display === "block") {
             callout.forEach(function(elem) {
                 elem.addEventListener("click", function(event) {
                     background.style.display = "none";
                     console.log('target', e.target);
-                    e.target.closest('.nav-item').classList.remove('active');
+                    if (e.target.closest('.nav-item') !== null) {
+                        e.target.closest('.nav-item').classList.remove('active');
+                    }
                 }); 
             });
         }
