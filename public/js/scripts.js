@@ -24,12 +24,12 @@ xhr.onload = function() {
             if (myObj.items[i].items.length > 0) {
                 
                 for (var f = 0; f < myObj.items[i].items.length; f++) {
-                    let innerUrl = myObj.items[i].items[f].url
-                    let innerLabel = myObj.items[i].items[f].label
+                    let innerUrl = myObj.items[i].items[f].url;
+                    let innerLabel = myObj.items[i].items[f].label;
                     innerNav = innerNav + "<a href='" + innerUrl + "'><div>" + innerLabel + "</div></a>";
                 }
             }
-            url = myObj.items[i].url
+            url = myObj.items[i].url;
             nav += `<li class="nav-item" id="tar_${i}">
                 <a href="${url}"><span>${myObj.items[i].label}</span></a>
                 <div class="nav-item-inner">${innerNav}</div></li>`;

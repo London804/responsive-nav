@@ -105,15 +105,6 @@ a {
   overflow: auto; }
   .nav-items.animate {
     transform: translateX(0%); }
-  .nav-items:after {
-    content: "© 2018 Elephant. All Rights Reserved.";
-    display: block;
-    position: absolute;
-    bottom: 0.625rem;
-    margin-left: 1.5rem;
-    font-weight: 200;
-    font-family: 'Helvetica Neue Regular';
-    font-size: 0.75rem; }
 
 .nav-header {
   position: relative;
@@ -314,5 +305,15 @@ a {
 
   .footer-callout {
     display: none; } }
+@media (min-height: 568px) and (max-width: 767px) {
+  .nav-items:after {
+    content: "© 2018 Elephant. All Rights Reserved.";
+    display: block;
+    position: absolute;
+    bottom: 0.625rem;
+    margin-left: 1.5rem;
+    font-weight: 200;
+    font-family: 'Helvetica Neue Regular';
+    font-size: 0.75rem; } }
 
 /*# sourceMappingURL=styles.css.map */
